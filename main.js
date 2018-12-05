@@ -16,8 +16,8 @@ function drawBoard(board) {
 // take users input
 function takeInput(token) {
   drawBoard(board);
-  let usrInput = Number(rl.question(`Where to place ${token.green.bold}: `.yellow));
-  temp = false;
+  let usrInput = +rl.question(`Where to place ${token.green.bold}: `.yellow);
+  let temp = false;
   while (!temp) {
     if (usrInput >= 1 && usrInput <= 9) {
       if (!"XO".includes(board[usrInput-1].toString())) {
@@ -30,15 +30,13 @@ function takeInput(token) {
 
 // check if user entered win input
 function checkWin(board) {
-  for (let el of win_coords) {
-    if (board[el[0]] == board[el[1]] && board[el[1]] == board[el[2]]) return board[el[0]];
-  };
+  for (let el of win_coords) if (board[el[0]] == board[el[1]] && board[el[1]] == board[el[2]]) return board[el[0]];
   return false;
 }
 
 // main function
 void function game(board) {
-  console.log(`You are playing Tic Tac Toe.`.yellow.bold);
+  console.log('You are playing Tic Tac Toe'.yellow.bold);
   // player ticker
   let count = 0;
   // check if somebody already won the game
@@ -58,7 +56,7 @@ void function game(board) {
 
     if (count === 9) {
       drawBoard(board);
-      console.log(`Nobody won (draw). Try again.`.yellow);
+      console.log('It\'s draw. Try again.'.yellow);
       won = true;
       break;
     }
