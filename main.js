@@ -13,7 +13,7 @@ function drawBoard(board) {
   }
 }
 
-// take users input
+// take users input 
 function takeInput(token) {
   drawBoard(board);
   let usrInput = +rl.question(`Where to place ${token.green.bold}: `.yellow);
