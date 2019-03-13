@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ookldev",
-  "license": "MIT",
+  "license": "GPLv3",
   "dependencies": {
     "colors": "^1.3.2",
     "readline-sync": "^1.4.9"
